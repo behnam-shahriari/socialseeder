@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Laravel\Lumen\Auth\Authorizable;
 
-class Actors extends Model implements AuthenticatableContract, AuthorizableContract
+class Actor extends Model implements AuthenticatableContract, AuthorizableContract
 {
     use Authenticatable, Authorizable, HasFactory;
 
@@ -25,6 +25,11 @@ class Actors extends Model implements AuthenticatableContract, AuthorizableContr
         'phone',
         'type'
     ];
+
+    public function products()
+    {
+        return $this->hasMany(Product::class, 'actor_username');
+    }
 
     /**
      * The attributes excluded from the model's JSON form.

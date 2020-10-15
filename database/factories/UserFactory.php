@@ -2,7 +2,7 @@
 
 namespace Database\Factories;
 
-use App\Models\Actors;
+use App\Models\Actor;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class UserFactory extends Factory
@@ -12,7 +12,7 @@ class UserFactory extends Factory
      *
      * @var string
      */
-    protected $model = Actors::class;
+    protected $model = Actor::class;
 
     /**
      * Define the model's default state.

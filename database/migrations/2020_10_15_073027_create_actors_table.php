@@ -13,14 +13,15 @@ class CreateActorsTable extends Migration
      */
     public function up()
     {
+        Schema::dropIfExists('actors');
         Schema::create('actors', function (Blueprint $table) {
             $table->uuid('username');
             $table->string('firstName');
             $table->string('lastName');
+            $table->string('password');
             $table->string('phone');
-            $table->boolean('type')->default(1); //1 --> Client, 0 --> User
+            $table->boolean('type')->default(1); // 0:User, 1:Client
             $table->timestamps();
-
         });
     }
 
