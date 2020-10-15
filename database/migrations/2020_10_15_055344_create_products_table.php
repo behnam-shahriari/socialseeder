@@ -19,8 +19,11 @@ class CreateProductsTable extends Migration
             $table->text('description')->nullable();
             $table->double('price');
             $table->integer('quantity');
-            $table->boolean('enable')->default(0);
+            $table->boolean('enable')->default(0); // 0: Disabled, 1: Enabled
             $table->timestamps();
+
+
+            $table->foreignUuid('username')->constrained('actors')->cascadeOnDelete();
         });
     }
 
