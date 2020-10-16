@@ -4,7 +4,7 @@
 namespace product;
 
 
-class ProductTest
+class ProductTest extends TestCase
 {
 
 }
