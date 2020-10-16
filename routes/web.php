@@ -12,7 +12,15 @@
 | and give it the Closure to call when that URI is requested.
 |
 */
-
-$router->get('/', function () use ($router) {
-    return $router->app->version();
+$VERSION = getenv('APP_VERSION', 'api/v1');
+$router->group(['prefix'=>$VERSION], function ($router){
+    $router->get('actor', 'Actor\ActorController@all');
+    $router->post('actor', 'Actor\ActorController@create');
 });
+
+$router->get('/', function () use($VERSION){
+    return response()->json([
+        'version' => $VERSION
+    ]);
+});
+

@@ -18,6 +18,9 @@ class Actor extends Model implements AuthenticatableContract, AuthorizableContra
      *
      * @var array
      */
+
+
+
     protected $fillable = [
         'username',
         'firstName',

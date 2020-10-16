@@ -6,6 +6,7 @@
     "type": "project",
     "require": {
         "php": "^7.3",
+        "laravel/legacy-factories": "^1.0",
         "laravel/lumen-framework": "^8.0"
     },
     "require-dev": {
