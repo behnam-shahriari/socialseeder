@@ -17,7 +17,7 @@ class CreateActorsTable extends Migration
         Schema::dropIfExists('actors');
         Schema::create('actors', function (Blueprint $table) {
             $table->id();
-            $table->string('username')->unique();
+            $table->string('email')->unique();
             $table->string('firstName');
             $table->string('lastName');
             $table->string('password');

@@ -25,6 +25,9 @@ $router->group(['prefix' => $VERSION], function ($router) {
         });
     });
 
+    $router->post('/login', 'Auth\LoginController@login');
+    $router->post('/sign_up', 'Auth\SignupController@signUp');
+
 });
 
 $router->get('/', function () use ($VERSION) {

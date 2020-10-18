@@ -13,7 +13,7 @@ class ActorFactory extends Factory
     public function definition()
     {
         return [
-            'username' => $this->faker->userName,
+            'email' => $this->faker->email,
             'firstName' => $this->faker->name,
             'lastName' => $this->faker->lastName,
             'password' => $this->faker->password,

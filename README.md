@@ -1,6 +1,7 @@
 # Store API Assignment
 
-## How to run?
+## How to run the app?
+  * `git clone https://github.com/behnam70/socialseeder.git`
   * `composer install`
   *  set .env values for database setup
   * `php artisan migrate`

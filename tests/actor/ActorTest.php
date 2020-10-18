@@ -12,7 +12,7 @@
 //        $actor = Actor::factory()->create();
 //        $this->assertNotNull($actor->id);
 //        $this->seeInDatabase('actors', [
-//            'username' => $actor->username
+//            'email' => $actor->email
 //        ]);
 //    }
 //
