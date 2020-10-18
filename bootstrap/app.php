@@ -1,5 +1,7 @@
 <?php
 
+use Tymon\JWTAuth\Providers\LumenServiceProvider;
+
 require_once __DIR__.'/../vendor/autoload.php';
 
 (new Laravel\Lumen\Bootstrap\LoadEnvironmentVariables(
@@ -76,9 +78,10 @@ $app->configure('app');
 //     App\Http\Middleware\ExampleMiddleware::class
 // ]);
 
-// $app->routeMiddleware([
-//     'auth' => App\Http\Middleware\Authenticate::class,
-// ]);
+ $app->routeMiddleware([
+     'user' => App\Http\Middleware\UserMiddleware::class,
+     'client' => App\Http\Middleware\ClientMiddleware::class
+ ]);
 
 /*
 |--------------------------------------------------------------------------
@@ -91,8 +94,10 @@ $app->configure('app');
 |
 */
 
-// $app->register(App\Providers\AppServiceProvider::class);
-// $app->register(App\Providers\AuthServiceProvider::class);
+ $app->register(App\Providers\AppServiceProvider::class);
+ $app->register(App\Providers\AuthServiceProvider::class);
+ $app->register(LumenServiceProvider::class);
+
 // $app->register(App\Providers\EventServiceProvider::class);
 
 /*

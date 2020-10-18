@@ -13,33 +13,22 @@ class Actor extends Model implements AuthenticatableContract, AuthorizableContra
 {
     use Authenticatable, Authorizable, HasFactory;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-
-
-
     protected $fillable = [
         'username',
         'firstName',
         'lastName',
         'phone',
-        'type'
+        'permission'
+    ];
+
+    protected $hidden = [
+        'password',
     ];
 
     public function products()
     {
-        return $this->hasMany(Product::class, 'actor_username');
+        return $this->where('permission', 'user')->hasMany(Product::class, 'created_by', 'id');
     }
 
-    /**
-     * The attributes excluded from the model's JSON form.
-     *
-     * @var array
-     */
-    protected $hidden = [
-        'password',
-    ];
+
 }

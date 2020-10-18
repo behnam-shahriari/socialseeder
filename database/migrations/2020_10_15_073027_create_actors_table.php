@@ -1,5 +1,6 @@
 <?php
 
+use App\Services\Core\EnumHelper;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -15,12 +16,13 @@ class CreateActorsTable extends Migration
     {
         Schema::dropIfExists('actors');
         Schema::create('actors', function (Blueprint $table) {
-            $table->uuid('username');
+            $table->id();
+            $table->string('username')->unique();
             $table->string('firstName');
             $table->string('lastName');
             $table->string('password');
-            $table->string('phone');
-            $table->boolean('type')->default(1); // 0:User, 1:Client
+            $table->string('phone')->nullable();
+            $table->enum('permission', EnumHelper::actorPermissions());
             $table->timestamps();
         });
     }

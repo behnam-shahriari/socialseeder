@@ -3,22 +3,13 @@
 namespace Database\Factories;
 
 use App\Models\Actor;
+use App\Services\Core\EnumHelper;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class ActorFactory extends Factory
 {
-    /**
-     * The name of the factory's corresponding model.
-     *
-     * @var string
-     */
     protected $model = Actor::class;
 
-    /**
-     * Define the model's default state.
-     *
-     * @return array
-     */
     public function definition()
     {
         return [
@@ -27,7 +18,7 @@ class ActorFactory extends Factory
             'lastName' => $this->faker->lastName,
             'password' => $this->faker->password,
             'phone' => $this->faker->phoneNumber,
-            'type' => $this->faker->boolean
+            'permission' => $this->faker->randomElement(EnumHelper::actorPermissions())
         ];
     }
 }

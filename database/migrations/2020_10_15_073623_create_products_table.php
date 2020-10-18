@@ -18,12 +18,12 @@ class CreateProductsTable extends Migration
             $table->id();
             $table->string('title');
             $table->text('description')->nullable();
-            $table->double('price');
-            $table->integer('quantity');
+            $table->integer('price');
+            $table->unsignedSmallInteger('availability');
             $table->boolean('enable')->default(0); //0: disable, 1: enable
             $table->timestamps();
 
-            $table->foreignUuid('actor_username')->constrained('actors')->cascadeOnDelete();
+            $table->foreignId('created_by')->constrained('actors')->cascadeOnDelete();
         });
     }
 
