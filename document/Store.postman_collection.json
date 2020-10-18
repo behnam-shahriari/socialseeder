@@ -1,0 +1,249 @@
+{
+	"info": {
+		"_postman_id": "ea663746-97ad-4148-9aea-9d6e9c4f41ba",
+		"name": "Store",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\":\"Behnam\",\r\n    \"lastName\":\"Shahriari\",\r\n    \"email\":\"shahriaribehnam@gmail.com\",\r\n    \"password\":\"Test123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/sign_up",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"sign_up"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create product by user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODA4MFwvYXBpXC92MVwvbG9naW4iLCJpYXQiOjE2MDMwMTkzODEsImV4cCI6MTYwMzEwNTc4MSwibmJmIjoxNjAzMDE5MzgxLCJqdGkiOiJCZ1pPNHU0ZnVOTGkzM3hqIiwic3ViIjoxLCJwcnYiOiJlZmY3ZGRmOGMxMGUxYTc0M2RhNTQ4NmJjYTY3YmI2NTRlMmY1Y2MwIn0.e6dm6bxDC1OdXQpLYipoaL4yh3VSfbJ80JZWXIyouOo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\":\"Pen\",\r\n    \"price\":2000,\r\n    \"availability\":5,\r\n    \"created_by\":1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/product",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"shahriaribehnam@gmail.com\",\r\n    \"password\":\"Test123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/login",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update product by user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODA4MFwvYXBpXC92MVwvbG9naW4iLCJpYXQiOjE2MDMwMTkzODEsImV4cCI6MTYwMzEwNTc4MSwibmJmIjoxNjAzMDE5MzgxLCJqdGkiOiJCZ1pPNHU0ZnVOTGkzM3hqIiwic3ViIjoxLCJwcnYiOiJlZmY3ZGRmOGMxMGUxYTc0M2RhNTQ4NmJjYTY3YmI2NTRlMmY1Y2MwIn0.e6dm6bxDC1OdXQpLYipoaL4yh3VSfbJ80JZWXIyouOo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":1,\r\n    \"title\":\"Pen\",\r\n    \"price\":2000,\r\n    \"description\":\"\",\r\n    \"availability\":10,\r\n    \"created_by\":1,\r\n    \"enable\":1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/product",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete product by user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODA4MFwvYXBpXC92MVwvbG9naW4iLCJpYXQiOjE2MDMwMTkzODEsImV4cCI6MTYwMzEwNTc4MSwibmJmIjoxNjAzMDE5MzgxLCJqdGkiOiJCZ1pPNHU0ZnVOTGkzM3hqIiwic3ViIjoxLCJwcnYiOiJlZmY3ZGRmOGMxMGUxYTc0M2RhNTQ4NmJjYTY3YmI2NTRlMmY1Y2MwIn0.e6dm6bxDC1OdXQpLYipoaL4yh3VSfbJ80JZWXIyouOo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/product/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"product",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get list of products by actors",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/product",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Purchase by Actor",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"product_id\":1,\r\n    \"quantity\":2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/purchase",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"purchase"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get list of purchases made by actors",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/purchase",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"purchase"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

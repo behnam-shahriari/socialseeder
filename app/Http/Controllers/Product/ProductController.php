@@ -25,6 +25,8 @@ class ProductController extends AppController
         $this->validate($request, [
             'title' => 'required|string|min:2|max:100',
             'price' => 'required|integer|min:0',
+            'availability' => 'required|integer|min:0|max:1000',
+            'created_by' => 'required|exists:actors,id'
         ]);
         $product = $this->productService->create($request->input());
         return $this->success($product, '', [], 201);
